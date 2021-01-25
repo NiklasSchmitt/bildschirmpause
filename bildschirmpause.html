@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="shrink-to-fit=no, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-		<title id = "titleMinutes">Bildschirmpause</title>
+		<title id="titleMinutes">Bildschirmpause</title>
 		<link rel="icon" type="image/png" sizes="128x128" href="https://files.niklas-schmitt.de/public/palme.png"/>
 		<script>
 			var myTimer;
@@ -79,54 +79,54 @@
 					document.getElementById("darkmodeSwitch").innerHTML = "aus";
 				}
 			}
-</script>
-<style>
+		</script>
+		<style>
+			#disclaimer{
+				font-size: 8px;
+			}
 
+			#wrapper {
+				background-color: #ffffff;
+				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+				border-radius: 12px;
+				margin: 2%;
+				padding: 4px;
+			}
 
-#disclaimer{
-	font-size: 8px;
-	}
-#wrapper {
-	background-color: #ffffff;
-	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-	border-radius: 12px;
-	margin: 2%;
-	padding: 4px;
-}
+			.bodyDark {
+				background-color: #141414;
+				color:white;
+			}
 
-.bodyDark {
-	background-color: #141414;
-	color:white;
-}
-
-.wrapperDark {
-	background-color: #262626 !important;
-	box-shadow: 0 1px 10px white !important;
-}
-</style>
-</head>
-<body>
-	<div id="wrapper">
-		<h1>Bildschirmpause</h1>
-		<hr>
-		<p>Regelmäßige Pausen von der Arbeit am Bildschirm sind für die Entspannung der Augen extrem wichtig!</p>
-		<p id="next"></p>
-		<button id="startButton" onClick="start()">Los geht's</button>
-		<button id="stopButton" onClick="stop()" disabled>Stop</button>
-		<hr>
-		<p>
-			<h3>Notifications erhalten</h3>
-			Aktiviere hier die Desktop-Notifications und erhalte jede Stunde eine kleine Erinnerung, deine Augen für einen kurzen Moment zu entspannen.<br>
-			<button id="grant" onClick="setPermission()">Desktop-Notifications aktivieren</button>
-		</p>
-		<p>Licht <span id="darkmodeSwitch">aus</span><input type="checkbox" id ="darkmode" onchange="darkmode()"></p>
-<p id ="disclaimer">Palmen-Icon erstellt von Freepik und zur Verfügung gestellt auf www.flaticon.com</p>
-</div>
-</body>
-<script>
-	if (Notification.permission === "granted") {
-		document.getElementById("grant").disabled = true;
-		document.getElementById("grant").title = "Berechtigung bereits erteilt. Danke!";
-	}
-</script>
+			.wrapperDark {
+				background-color: #262626 !important;
+				box-shadow: 0 1px 10px white !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>Bildschirmpause</h1>
+			<hr>
+			<p>Regelmäßige Pausen von der Arbeit am Bildschirm sind für die Entspannung der Augen extrem wichtig!</p>
+			<p id="next"></p>
+			<button id="startButton" onClick="start()">Los geht's</button>
+			<button id="stopButton" onClick="stop()" disabled>Stop</button>
+			<hr>
+			<p>
+				<h3>Notifications erhalten</h3>
+				Aktiviere hier die Desktop-Notifications und erhalte jede Stunde eine kleine Erinnerung, deine Augen für einen kurzen Moment zu entspannen.<br>
+				<button id="grant" onClick="setPermission()">Desktop-Notifications aktivieren</button>
+			</p>
+			<p>Licht <span id="darkmodeSwitch">aus</span><input type="checkbox" id ="darkmode" onchange="darkmode()"></p>
+			<p id ="disclaimer">Palmen-Icon erstellt von Freepik und zur Verfügung gestellt auf www.flaticon.com</p>
+		</div>
+	</body>
+	<script>
+		if (Notification.permission === "granted") {
+			document.getElementById("grant").disabled = true;
+			document.getElementById("grant").title = "Berechtigung bereits erteilt. Danke!";
+		}
+		start();
+	</script>
 </html>
